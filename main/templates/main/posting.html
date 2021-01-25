@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posting</title>
+</head>
+<body>
+    <h1>게시글 개별 페이지</h1>
+    <p>제목 : {{post.postname}}</p>
+    <p>내용 : {{post.contents}}</p>
+    {% if post.image %}
+        <p>첨부사진 : </p>
+        <img src="{{post.image.url}}" alt="" height="600">
+        <br><br>
+    {% endif %}
+    <a href="/blog/">목록 돌아가기</a><br><br>
+    <a href="/blog/{{post.pk}}/remove_post">삭제</a>
+</body>
+</html>
